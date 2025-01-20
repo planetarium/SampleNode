@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "SampleNode";
+
+package node.action.v1;
+
+service Action {
+  rpc AddNumber(AddNumberRequest) returns (AddNumberReply);
+  rpc GetNumber(GetNumberRequest) returns (GetNumberReply);
+}
+
+message AddNumberRequest {
+  int32 value = 1;
+}
+
+message AddNumberReply {
+  string tx_id = 1;
+}
+
+message GetNumberRequest {
+}
+
+message GetNumberReply {
+  int32 value = 1;
+}
